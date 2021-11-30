@@ -2,11 +2,9 @@
 
 Discovery and routing artifacts.
 
-## Public reachable discovery
+## Usable artifacts
 
 Last published manifests can be found on https://discovery.attrace.com/mainnet/*
-
-## Artifacts
 
 -  [daos.json](https://discovery.attrace.com/mainnet/daos.json)
 -  [indexers.json](https://discovery.attrace.com/mainnet/indexers.json)
