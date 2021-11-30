@@ -1,0 +1,19 @@
+{
+  "name": "discovery",
+  "version": "0.0.1",
+  "main": "generate.ts",
+  "author": "Roel Berger <berger.roel@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^10.0.0"
+  },
+  "scripts": {
+    "build": "ts-node generate.ts"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "ethers": "^5.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
