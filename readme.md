@@ -2,14 +2,6 @@
 
 Discovery and routing artifacts.
 
-## Nodes are most likely up
-
-The mindset of these manifests is to provide discovery info without any uptime guarantees.
-The nodes are "probably" up, but they might be unreachable due to netsplit/load/maintenance/attacks/...   
-When nodes are really shut down, they are removed from the manifests.
-
-It's up to caller to fallback to other nodes when nodes are unreachable.
-
 ## Public reachable discovery
 
 Last published manifests can be found on https://discovery.attrace.com/mainnet/*
@@ -21,6 +13,14 @@ Last published manifests can be found on https://discovery.attrace.com/mainnet/*
 -  [tokenRegistries.json](https://discovery.attrace.com/mainnet/tokenRegistries.json)
 -  [airports.json](https://discovery.attrace.com/mainnet/airports.json)
 -  [full.json](https://discovery.attrace.com/mainnet/full.json)
+
+## Usage mindset
+
+These manifests provide discovery hints without any uptime guarantees.   
+The nodes are "most likely" up, but they might be unreachable due to netsplit/load/maintenance/attacks/...   
+It's up to caller to fallback to other nodes when nodes are unreachable.
+
+When nodes are really shut down, they are removed from the manifests.
 
 ## Fast node selection
 The CDN discovery.attrace.com provides `x-amz-cf-pop` response header for fast node selection.   
