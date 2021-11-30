@@ -11,5 +11,5 @@ export async function getIndexers(): Promise<IndexerInfo[]> {
 
 // Actual definitions without checks
 const indexers: IndexerInfo[] = [
-  { url: 'https://indexer.attrace.network', location: { lat: 53.3331, lon: -6.2489 } },
+  { url: 'https://indexer.attrace.com', location: { lat: 53.3331, lon: -6.2489 } },
 ];
