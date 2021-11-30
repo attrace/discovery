@@ -1,7 +1,4 @@
-export interface EstimatedNodeLocation {
-  lat: number;
-  lon: number;
-}
+import { EstimatedNodeLocation } from "./types";
 
 export interface IndexerInfo {
   url: string;
