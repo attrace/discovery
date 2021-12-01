@@ -3,7 +3,7 @@ import { AirportInfo, getAirports } from './airports';
 import { TokenRegistryInfo, getTokenRegistries } from './tokens';
 import { getDAOs } from './daos';
 import { getIndexers, IndexerInfo } from './indexers';
-import { ATTRInfo, getATTRs } from './attrs';
+import { getATTRs } from './attrs';
 import { NetworkContract } from './types';
 import { getIndexedLogSets } from './indexedLogSets';
 

@@ -6,5 +6,5 @@ export interface EstimatedNodeLocation {
 export interface NetworkContract {
   chainId: number;
   address: string;
-  startBlockNumber: number;
+  startBlockNumber?: number;
 }
