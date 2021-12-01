@@ -1,24 +1,14 @@
 import { writeFile, rm, mkdirp } from 'fs-extra';
 import { AirportInfo, getAirports } from './airports';
 import { TokenRegistryInfo, getTokenRegistries } from './tokens';
-import { DAOInfo, getDAOs } from './daos';
+import { getDAOs } from './daos';
 import { getIndexers, IndexerInfo } from './indexers';
 import { ATTRInfo, getATTRs } from './attrs';
+import { NetworkContract } from './types';
+import { getIndexedLogSets } from './indexedLogSets';
 
-interface Manifest {
-  daos: DAOInfo[] | null;
-  indexers: IndexerInfo[] | null;
-  airports: AirportInfo[] | null;
-  generatedAt: number;
-}
-
-function toManifest(
-  daos?:DAOInfo[], 
-  attrs?:ATTRInfo[],
-  indexers?: IndexerInfo[], 
-  tokenRegistries?: TokenRegistryInfo[], 
-  airports?:AirportInfo[]): string {
-  return JSON.stringify({ daos, attrs, indexers, tokenRegistries, airports, generatedAt: Date.now() });
+function toManifest(props: object): string {
+  return JSON.stringify({ ...props, generatedAt: Date.now() });
 }
 
 async function main() {
@@ -27,17 +17,19 @@ async function main() {
   const indexers = await getIndexers();
   const airports = await getAirports();
   const tokenRegistries = await getTokenRegistries();
+  const indexedLogSets = await getIndexedLogSets();
 
   // Build
   const buildDir = `${__dirname}/build`;
   await rm(buildDir, { recursive: true, force: true });
   await mkdirp(buildDir);
-  await writeFile(`${buildDir}/daos.json`, toManifest(daos));
-  await writeFile(`${buildDir}/attrs.json`, toManifest(undefined, attrs));
-  await writeFile(`${buildDir}/indexers.json`, toManifest(undefined, undefined, indexers));
-  await writeFile(`${buildDir}/tokenRegistries.json`, toManifest(undefined, undefined, undefined, tokenRegistries));
-  await writeFile(`${buildDir}/airports.json`, toManifest(undefined, undefined, undefined, undefined, airports));
-  await writeFile(`${buildDir}/full.json`, toManifest(daos, attrs, indexers, tokenRegistries, airports));
+  await writeFile(`${buildDir}/daos.json`, toManifest({ daos }));
+  await writeFile(`${buildDir}/attrs.json`, toManifest({ attrs }));
+  await writeFile(`${buildDir}/indexers.json`, toManifest({ indexers }));
+  await writeFile(`${buildDir}/tokenRegistries.json`, toManifest({ tokenRegistries }));
+  await writeFile(`${buildDir}/airports.json`, toManifest({ airports }));
+  await writeFile(`${buildDir}/full.json`, toManifest({ daos , attrs, indexers, tokenRegistries, airports}));
+  await writeFile(`${buildDir}/indexedLogSets.json`, toManifest({ indexedLogSets }));
 }
 main()
 .catch(err => {
