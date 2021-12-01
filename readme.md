@@ -7,6 +7,7 @@ Discovery and routing artifacts.
 Last published manifests can be found on https://discovery.attrace.com/mainnet/*
 
 -  [daos.json](https://discovery.attrace.com/mainnet/daos.json)
+-  [attrs.json](https://discovery.attrace.com/mainnet/attrs.json)
 -  [indexers.json](https://discovery.attrace.com/mainnet/indexers.json)
 -  [tokenRegistries.json](https://discovery.attrace.com/mainnet/tokenRegistries.json)
 -  [airports.json](https://discovery.attrace.com/mainnet/airports.json)
