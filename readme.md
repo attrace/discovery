@@ -13,9 +13,9 @@ Last published manifests can be found on https://discovery.attrace.com/mainnet/*
 -  [airports.json](https://discovery.attrace.com/mainnet/airports.json)
 -  [full.json](https://discovery.attrace.com/mainnet/full.json)
 
-## Usage mindset
+## Indexers/tokenRegistry usage mindset
 
-These manifests provide discovery hints without any uptime guarantees.   
+These manifests provide node discovery hints without any uptime guarantees.   
 The nodes are "most likely" up, but they might be unreachable due to netsplit/load/maintenance/attacks/...   
 It's up to caller to fallback to other nodes when nodes are unreachable.
 
