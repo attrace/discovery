@@ -12,6 +12,7 @@ Last published manifests can be found on https://discovery.attrace.com/mainnet/*
 -  [tokenRegistries.json](https://discovery.attrace.com/mainnet/tokenRegistries.json)
 -  [airports.json](https://discovery.attrace.com/mainnet/airports.json)
 -  [full.json](https://discovery.attrace.com/mainnet/full.json)
+-  [indexedLogSets.json](https://discovery.attrace.com/mainnet/indexedLogSets.json)
 
 ## Indexers/tokenRegistry usage mindset
 
