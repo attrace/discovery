@@ -132,8 +132,10 @@ const rows: BaseIndexedLogSet[] = [
       'event ReferralContractRegistered(address indexed addr, bytes32 indexed version)',
     ],
     contracts: [
-      { chainId: 1, address: '0x44e2deC86B9F0e0266E9AA66e10323A2bd69CF9A', startBlockNumber: 12434965 },
-      { chainId: 137, address: '0x0335DeFC8A1977b99488e0b5f5c6bc3D44fAcdD4', startBlockNumber: 16511305 },
+      { chainId: 1, address: '0x321CF1B57016A745405C615Ad9635cD73c6709C2', startBlockNumber: 12620201 },
+      { chainId: 4, address: '0xe0ab0E1789F5CcCa729bCfcDcc3245f2eb8A8Eb6', startBlockNumber: 8731987 },
+      { chainId: 137, address: '0x09D061B0CA614F995dAD62F17852b794Bb0d1FB8', startBlockNumber: 17897808 },
+      { chainId: 80001, address: '0x86D8AB436CDaa6A6586C0EEe43D7BB3070108455', startBlockNumber: 17425442 },
     ]
   },
   {
@@ -142,6 +144,16 @@ const rows: BaseIndexedLogSet[] = [
       'event TransferRuleConfigured(address addr, (uint16,uint16,uint96,uint40,uint16,uint16) rule)',
       'event Transfer(address indexed from, address indexed to, uint256 value)',
       'event Approval(address indexed owner, address indexed spender, uint256 value)',
+    ],
+    contracts: [
+      { chainId: 1, address: '0x44e2deC86B9F0e0266E9AA66e10323A2bd69CF9A', startBlockNumber: 12434965 },
+      { chainId: 137, address: '0x0335DeFC8A1977b99488e0b5f5c6bc3D44fAcdD4', startBlockNumber: 16511305 },
+    ]
+  },
+  {
+    setName: 'OldBountyPayments',
+    events: [
+      'event BountiesPayed(bytes32 indexed refHash, address[] beneficiaries, uint[] amounts)',
     ],
     contracts: [
       { chainId: 1, address: '0x160d5f442E7d3899955Cf5adfC15Fce57c05ea78', startBlockNumber: 12914041 },
