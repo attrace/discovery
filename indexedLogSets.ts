@@ -77,6 +77,17 @@ const rows: BaseIndexedLogSet[] = [
     ]
   },
   {
+    setName: 'ProgramRegistryV2',
+    events: [
+      'event ProgramCreated(bytes32 indexed refHash, bytes6 indexed rh6, address creator, bytes32 accessProof)',
+      'event ProgramUpdated(bytes32 indexed refHash, string key, bytes value)',
+      'event ConversionPeriodChanged(bytes32 indexed refHash, uint8 change, (uint40 begin, uint40 end, uint40 promoBegin, uint40 promoEnd, uint40 finalized) period)'
+    ],
+    contracts: [
+      { chainId: 80001, address: '0x584D90cA2E2dBC82414639b6667c81839BfEaebe', startBlockNumber: 22452876 },
+    ]
+  },
+  {
     setName: 'DAPPOpenPeriodClosedListFilter',
     events: [
       'event ConfigChanged(bytes32 refHash, string key, bytes value)',
