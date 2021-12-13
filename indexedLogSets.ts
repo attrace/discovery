@@ -42,7 +42,7 @@ const rows: BaseIndexedLogSet[] = [
       'event ReferrableWithdrawn(bytes32 indexed refHash, address seller)',
       'event ReferrableCreated(bytes32 indexed refHash, string metadata, (uint128 bountyValue,address pairAddrV2,address pairAddrV3,address farmingContract) metastate, uint utilityFee)',
       'event ReferrableConfigurationUpdated(bytes32 indexed refHash, string key, bytes value)',
-      'event ReferrableStateSnapshot(bytes32 indexed refHash, ((address,uint96,uint32,uint32,uint40,uint24,uint24,uint24),address,uint40,uint32,uint96,uint96,uint40) state)',
+      'event ReferrableStateSnapshot(bytes32 indexed refHash, ((address bountyToken,uint96 price,uint32 bounty1Percentage,uint32 bounty2Percentage,uint40 mintStart,uint24 mintDurationOffset,uint24 conversionStartOffset,uint24 programEndOffset) referrable,address seller,uint40 blockTime,uint32 promoterCount,uint96 attrNetworkFeeReserves,uint96 gasReserves,uint40 conversionStartTime) state)',
       'event PeriodConfigured(bytes32 indexed refHash, uint40 startTime, uint40 endTime)',
     ],
     contracts: [
