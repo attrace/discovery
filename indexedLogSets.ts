@@ -36,13 +36,13 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'LiquidityFarmingReferralContractV1',
     events: [
-      'event BountiesPayed(bytes32 indexed refHash, address[] beneficiaries, uint[] amounts)',
+      'event BountiesPayed(bytes32 indexed refHash, address[] beneficiaries, uint256[] amounts)',
       'event ReferralTokenMinted(bytes32 indexed refHash, address indexed promoter, bytes32 indexed token)',
       'event ReferrableConversion(bytes32 indexed refHash, address indexed verifier, address indexed promoter, address buyer)',
       'event ReferrableWithdrawn(bytes32 indexed refHash, address seller)',
-      'event ReferrableCreated(bytes32 indexed refHash, string metadata, (uint128 bountyValue,address pairAddrV2,address pairAddrV3,address farmingContract) metastate, uint utilityFee)',
+      'event ReferrableCreated(bytes32 indexed refHash, string metadata, (uint128 bountyValue, address pairAddrV2, address pairAddrV3, address farmingContract) metastate, uint256 utilityFee)',
       'event ReferrableConfigurationUpdated(bytes32 indexed refHash, string key, bytes value)',
-      'event ReferrableStateSnapshot(bytes32 indexed refHash, ((address bountyToken,uint96 price,uint32 bounty1Percentage,uint32 bounty2Percentage,uint40 mintStart,uint24 mintDurationOffset,uint24 conversionStartOffset,uint24 programEndOffset) referrable,address seller,uint40 blockTime,uint32 promoterCount,uint96 attrNetworkFeeReserves,uint96 gasReserves,uint40 conversionStartTime) state)',
+      'event ReferrableStateSnapshot(bytes32 indexed refHash, ((address bountyToken, uint96 price, uint32 bounty1Percentage, uint32 bounty2Percentage, uint40 mintStart, uint24 mintDurationOffset, uint24 conversionStartOffset, uint24 programEndOffset) referrable, address seller, uint40 blockTime,uint32 promoterCount, uint96 attrNetworkFeeReserves, uint96 gasReserves, uint40 conversionStartTime) state)',
       'event PeriodConfigured(bytes32 indexed refHash, uint40 startTime, uint40 endTime)',
     ],
     contracts: [
@@ -141,7 +141,7 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'ATTRToken',
     events: [
-      'event TransferRuleConfigured(address addr, (uint16,uint16,uint96,uint40,uint16,uint16) rule)',
+      'event TransferRuleConfigured(address addr, (uint16 timeLockMonths, uint16 vestingMonths, uint96 tokens, uint40 activationTime, uint16 outboundTimeLockMonths, uint16 outboundVestingMonths) rule)',
       'event Transfer(address indexed from, address indexed to, uint256 value)',
       'event Approval(address indexed owner, address indexed spender, uint256 value)',
     ],
@@ -153,7 +153,7 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'OldBountyPayments',
     events: [
-      'event BountiesPayed(bytes32 indexed refHash, address[] beneficiaries, uint[] amounts)',
+      'event BountiesPayed(bytes32 indexed refHash, address[] beneficiaries, uint256[] amounts)',
     ],
     contracts: [
       { chainId: 1, address: '0x160d5f442E7d3899955Cf5adfC15Fce57c05ea78', startBlockNumber: 12914041 },
