@@ -1,5 +1,5 @@
-import { ethers } from "ethers";
 import { NetworkContract } from "./types";
+import { ethers } from "ethers";
 
 interface BaseIndexedLogSet {
   setName: string;
@@ -34,3 +34,15 @@ const rows: BaseIndexedLogSet[] = [
     ]
   }
 ];
+
+function getEventIDsFromABI(abi): string[] {
+  const iface = new ethers.utils.Interface(abi)
+    
+  const eventIDs :string[] = []
+  for (const evName in iface.events) {
+    if (Object.prototype.hasOwnProperty.call(iface.events, evName)) {
+      eventIDs.push(ethers.utils.id(evName))
+    }
+  }
+  return eventIDs
+}
