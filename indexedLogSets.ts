@@ -23,8 +23,8 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'DAOStateV1',
     events: [
-      'AddressChanged(string,address,address)',
-      'VerifierSettingsChanged(address,uint96,uint96,uint24)', // Can be ignored
+      'AddressChanged(string setting, address requestor, address addr)',
+      'VerifierSettingsChanged(address requestor, uint96 verifierStake, uint96 verifierStakeSlashLowBound, uint24 verifierFraudDetectionMinTime)', // Can be ignored
     ],
     contracts: [
       { chainId: 1, address: '0x8f86BaAbEc737Eb00449425025964Fc4dFbf1522', startBlockNumber: 12619823 },
