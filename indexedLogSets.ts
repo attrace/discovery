@@ -14,7 +14,7 @@ export interface IndexedLogSet extends BaseIndexedLogSet {
 export async function getIndexedLogSets(): Promise<IndexedLogSet[]> {
   return rows.map(d => ({ 
     ...d,
-    eventIds: getEventIDs(d.events),
+    eventIds: getEventIDsFromABI(d.events),
   }));
 }
 
@@ -36,14 +36,14 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'LiquidityFarmingReferralContractV1',
     events: [
-      'BountiesPayed(bytes32,address[],uint256[])',
-      'ReferralTokenMinted(bytes32,address,bytes32)',
-      'ReferrableConversion(bytes32,address,address,address)',
-      'ReferrableWithdrawn(bytes32,address)',
-      'ReferrableCreated(bytes32,string,(uint128,address,address,address),uint256)',
-      'ReferrableConfigurationUpdated(bytes32,string,bytes)',
-      'ReferrableStateSnapshot(bytes32,((address,uint96,uint32,uint32,uint40,uint24,uint24,uint24),address,uint40,uint32,uint96,uint96,uint40))',
-      'PeriodConfigured(bytes32,uint40,uint40)',
+      'event BountiesPayed(bytes32 indexed refHash, address[] beneficiaries, uint[] amounts)',
+      'event ReferralTokenMinted(bytes32 indexed refHash, address indexed promoter, bytes32 indexed token)',
+      'event ReferrableConversion(bytes32 indexed refHash, address indexed verifier, address indexed promoter, address buyer)',
+      'event ReferrableWithdrawn(bytes32 indexed refHash, address seller)',
+      'event ReferrableCreated(bytes32 indexed refHash, string metadata, (uint128 bountyValue,address pairAddrV2,address pairAddrV3,address farmingContract) metastate, uint utilityFee)',
+      'event ReferrableConfigurationUpdated(bytes32 indexed refHash, string key, bytes value)',
+      'event ReferrableStateSnapshot(bytes32 indexed refHash, ((address,uint96,uint32,uint32,uint40,uint24,uint24,uint24),address,uint40,uint32,uint96,uint96,uint40) state)',
+      'event PeriodConfigured(bytes32 indexed refHash, uint40 startTime, uint40 endTime)',
     ],
     contracts: [
       { chainId: 1, address: '0x160d5f442e7d3899955cf5adfc15fce57c05ea78', startBlockNumber: 12914040 },
@@ -55,8 +55,8 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'BountyVaultV1',
     events: [
-      'ERC20BountyDeposited(bytes32,address,uint256,address)',
-'NativeBountyDeposited(bytes32,uint256,address)',
+      'event ERC20BountyDeposited(bytes32 indexed refHash, address token, uint256 value, address from)',
+      'event NativeBountyDeposited(bytes32 indexed refHash, uint256 value, address from)',
     ],
     contracts: [
       { chainId: 4, address: '0x6a73AB4Cb1031a8f3e907333678c9BDdd7411fd5', startBlockNumber: 9607267 },
@@ -67,8 +67,8 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'ProgramRegistryV1',
     events: [
-      'ConversionPeriodChanged(bytes32,uint8,(uint40,uint40,uint40,uint40,uint40))',
-      'ProgramProofAdded(bytes12,bytes32)',
+      'event ConversionPeriodChanged(bytes32 indexed refHash, uint8 change, (uint40 begin, uint40 end, uint40 promoBegin, uint40 promoEnd, uint40 finalized) period)',
+      'event ProgramProofAdded(bytes12 indexed proof, bytes32 indexed refHash)',
     ],
     contracts: [
       { chainId: 4, address: '0xfed2f6c007051ca8edb31b5fed00e7b9929eaa49', startBlockNumber: 9607267 },
@@ -79,8 +79,8 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'DAPPOpenPeriodClosedListFilter',
     events: [
-      'ConfigChanged(bytes32,string,bytes)',
-'AddressesChanged(bytes32,uint8,address[])',
+      'event ConfigChanged(bytes32 refHash, string key, bytes value)',
+      'event AddressesChanged(bytes32 indexed refHash, uint8 change, address[] addresses)',
     ],
     contracts: [
       { chainId: 1, address: '0xFe2a0d3604007AD32480B550eC3E792aFAC8739f', startBlockNumber: 13582052 },
@@ -92,8 +92,8 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'ReferralTokenRegistryV1',
     events: [
-      'ConfigChanged(bytes32,string,bytes)',
-'AddressChanged(bytes32,address,string,bytes)'
+      'event ConfigChanged(bytes32 refHash, string key, bytes value)',
+      'event AddressChanged(bytes32 indexed refHash, address indexed addr, string key, bytes value)',
     ],
     contracts: [
       { chainId: 1, address: '0xAB7c7f3F160289cf07c6D622B207c8ccF26F348e', startBlockNumber: 13582052 },
@@ -105,9 +105,9 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'NFTDropReferralContractV1',
     events: [
-      'ProgramCreated(bytes32,address)',
-      'ProgramUpdated(bytes32,string,bytes)',
-      'ProgramWithdrawn(bytes32)'
+      'event ProgramCreated(bytes32 indexed refHash, address creator)',
+      'event ProgramUpdated(bytes32 indexed refHash, string key, bytes value)',
+      'event ProgramWithdrawn(bytes32 indexed refHash)'
     ],
     contracts: [
       { chainId: 4, address: '0x460b1322DE0046c01C80999B10d47Bc44680fed1', startBlockNumber: 9607267 },
@@ -118,7 +118,7 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'ReferralContractRegistryV1',
     events: [
-      'ReferralContractRegistered(address,bytes32)',
+      'event ReferralContractRegistered(address indexed addr, bytes32 indexed version)',
     ],
     contracts: [
       { chainId: 1, address: '0x44e2deC86B9F0e0266E9AA66e10323A2bd69CF9A', startBlockNumber: 12434965 },
@@ -128,9 +128,9 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'ATTRToken',
     events: [
-      'TransferRuleConfigured(address,(uint16,uint16,uint96,uint40,uint16,uint16))',
-      'Transfer(address,address,uint256)',
-      'Approval(address,address,uint256)',
+      'event TransferRuleConfigured(address addr, (uint16,uint16,uint96,uint40,uint16,uint16) rule)',
+      'event Transfer(address indexed from, address indexed to, uint256 value)',
+      'event Approval(address indexed owner, address indexed spender, uint256 value)',
     ],
     contracts: [
       { chainId: 1, address: '0x160d5f442E7d3899955Cf5adfC15Fce57c05ea78', startBlockNumber: 12914041 },
@@ -139,25 +139,8 @@ const rows: BaseIndexedLogSet[] = [
   },
 ];
 
-/**
- * Try get with both format: normal + full event abi format
- */
-function getEventIDs(sources: string[]) : string[] {
-  const ids = []
-
-  for (const s of sources) {
-    if (s.includes('event ')) {
-      ids.push(...getEventIDsFromABI(s))
-    } else {
-      ids.push(ethers.utils.id(s))
-    }
-  }
-
-  return ids
-}
-
-function getEventIDsFromABI(abi: string): string[] {
-  const iface = new ethers.utils.Interface([abi])
+function getEventIDsFromABI(abi: string[]): string[] {
+  const iface = new ethers.utils.Interface(abi)
     
   const eventIDs :string[] = []
   for (const evName in iface.events) {
