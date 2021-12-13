@@ -14,7 +14,7 @@ export interface IndexedLogSet extends BaseIndexedLogSet {
 export async function getIndexedLogSets(): Promise<IndexedLogSet[]> {
   return rows.map(d => ({ 
     ...d,
-    eventIds: d.events.map(e => ethers.utils.id(e)),
+    eventIds: getEventIDsFromABI(d.events.map(e => `event ${e}`)),
   }));
 }
 
@@ -35,7 +35,7 @@ const rows: BaseIndexedLogSet[] = [
   }
 ];
 
-function getEventIDsFromABI(abi): string[] {
+function getEventIDsFromABI(abi: string[]): string[] {
   const iface = new ethers.utils.Interface(abi)
     
   const eventIDs :string[] = []
