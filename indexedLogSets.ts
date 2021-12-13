@@ -14,7 +14,7 @@ export interface IndexedLogSet extends BaseIndexedLogSet {
 export async function getIndexedLogSets(): Promise<IndexedLogSet[]> {
   return rows.map(d => ({ 
     ...d,
-    eventIds: getEventIDsFromABI(d.events.map(e => `event ${e}`)),
+    eventIds: getEventIDs(d.events),
   }));
 }
 
@@ -23,8 +23,8 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'DAOStateV1',
     events: [
-      'AddressChanged(string setting, address requestor, address addr)',
-      'VerifierSettingsChanged(address requestor, uint96 verifierStake, uint96 verifierStakeSlashLowBound, uint24 verifierFraudDetectionMinTime)', // Can be ignored
+      'event AddressChanged(string setting, address requestor, address addr)',
+      'event VerifierSettingsChanged(address requestor, uint96 verifierStake, uint96 verifierStakeSlashLowBound, uint24 verifierFraudDetectionMinTime)', // Can be ignored
     ],
     contracts: [
       { chainId: 1, address: '0x8f86BaAbEc737Eb00449425025964Fc4dFbf1522', startBlockNumber: 12619823 },
@@ -32,11 +32,132 @@ const rows: BaseIndexedLogSet[] = [
       { chainId: 137, address: '0x0CD36BF14Fa1642Ebd8300b484E7fCa1052975c4', startBlockNumber: 17897741 },
       { chainId: 80001, address: '0x22E31747A31E82aD86c8C8E68646Cb55b31fc467', startBlockNumber: 17425384 },
     ]
-  }
+  },
+  {
+    setName: 'LiquidityFarmingReferralContractV1',
+    events: [
+      'BountiesPayed(bytes32,address[],uint256[])',
+      'ReferralTokenMinted(bytes32,address,bytes32)',
+      'ReferrableConversion(bytes32,address,address,address)',
+      'ReferrableWithdrawn(bytes32,address)',
+      'ReferrableCreated(bytes32,string,(uint128,address,address,address),uint256)',
+      'ReferrableConfigurationUpdated(bytes32,string,bytes)',
+      'ReferrableStateSnapshot(bytes32,((address,uint96,uint32,uint32,uint40,uint24,uint24,uint24),address,uint40,uint32,uint96,uint96,uint40))',
+      'PeriodConfigured(bytes32,uint40,uint40)',
+    ],
+    contracts: [
+      { chainId: 1, address: '0x160d5f442e7d3899955cf5adfc15fce57c05ea78', startBlockNumber: 12914040 },
+      { chainId: 4, address: '0x5b2e70592b237779039fe096a9e32855e345a26a', startBlockNumber: 9009904 },
+      { chainId: 137, address: '0x45cf5df9e67409279f635291c71dc76a370f4f69', startBlockNumber: 18038834 },
+      { chainId: 80001, address: '0x3c15487649969e95fd525e653f69e6b077762d5f', startBlockNumber: 17454705 },
+    ]
+  },
+  {
+    setName: 'BountyVaultV1',
+    events: [
+      'ERC20BountyDeposited(bytes32,address,uint256,address)',
+'NativeBountyDeposited(bytes32,uint256,address)',
+    ],
+    contracts: [
+      { chainId: 4, address: '0x6a73AB4Cb1031a8f3e907333678c9BDdd7411fd5', startBlockNumber: 9607267 },
+      { chainId: 137, address: '0x9Ba69Ae4b4b7096B54Bd623097DB46a0fc28EbbD', startBlockNumber: 21167099 },
+      { chainId: 80001, address: '0x7dba02428f810ccd6433f2b6d08526104bb77ccc', startBlockNumber: 21210152 },
+    ]
+  },
+  {
+    setName: 'ProgramRegistryV1',
+    events: [
+      'ConversionPeriodChanged(bytes32,uint8,(uint40,uint40,uint40,uint40,uint40))',
+      'ProgramProofAdded(bytes12,bytes32)',
+    ],
+    contracts: [
+      { chainId: 4, address: '0xfed2f6c007051ca8edb31b5fed00e7b9929eaa49', startBlockNumber: 9607267 },
+      { chainId: 137, address: '0x00Db840A1Ba3d00A6C6316fdF3D0de86497899E8', startBlockNumber: 21167099 },
+      { chainId: 80001, address: '0xc25ceb355897e818a4300590294317497bbd6805', startBlockNumber: 21213486 },
+    ]
+  },
+  {
+    setName: 'DAPPOpenPeriodClosedListFilter',
+    events: [
+      'ConfigChanged(bytes32,string,bytes)',
+'AddressesChanged(bytes32,uint8,address[])',
+    ],
+    contracts: [
+      { chainId: 1, address: '0xFe2a0d3604007AD32480B550eC3E792aFAC8739f', startBlockNumber: 13582052 },
+      { chainId: 4, address: '0x8e9bdf12798a59a8540e07a7f3ce0d047bd48af4', startBlockNumber: 9579260 },
+      { chainId: 137, address: '0x885e77D0d1458d98Ac63C2883B05b1c7Fc559240', startBlockNumber: 21167099 },
+      { chainId: 80001, address: '0x6077a28e287b0ee583ba8fbd8e3f41706a372888', startBlockNumber: 21210364 },
+    ]
+  },
+  {
+    setName: 'ReferralTokenRegistryV1',
+    events: [
+      'ConfigChanged(bytes32,string,bytes)',
+'AddressChanged(bytes32,address,string,bytes)'
+    ],
+    contracts: [
+      { chainId: 1, address: '0xAB7c7f3F160289cf07c6D622B207c8ccF26F348e', startBlockNumber: 13582052 },
+      { chainId: 4, address: '0xeb349bb7e307cffebd78b97469570ecaa36fa6af', startBlockNumber: 9579246 },
+      { chainId: 137, address: '0x05DB037dBC1e197A31849eaE7baa9d55749049b5', startBlockNumber: 21167099 },
+      { chainId: 80001, address: '0x4b73e3c8d8254321460af1237efc2be80b18abad', startBlockNumber: 21210233 },
+    ]
+  },
+  {
+    setName: 'NFTDropReferralContractV1',
+    events: [
+      'ProgramCreated(bytes32,address)',
+      'ProgramUpdated(bytes32,string,bytes)',
+      'ProgramWithdrawn(bytes32)'
+    ],
+    contracts: [
+      { chainId: 4, address: '0x460b1322DE0046c01C80999B10d47Bc44680fed1', startBlockNumber: 9607267 },
+      { chainId: 137, address: '0xdE359Ba3767c2763E9C1E1883E3D8cE00ce97770', startBlockNumber: 21167099 },
+      { chainId: 80001, address: '0x55f8e2c8cb5e91127860c9729062c149a9b2b0ac', startBlockNumber: 21213539 },
+    ]
+  },
+  {
+    setName: 'ReferralContractRegistryV1',
+    events: [
+      'ReferralContractRegistered(address,bytes32)',
+    ],
+    contracts: [
+      { chainId: 1, address: '0x44e2deC86B9F0e0266E9AA66e10323A2bd69CF9A', startBlockNumber: 12434965 },
+      { chainId: 137, address: '0x0335DeFC8A1977b99488e0b5f5c6bc3D44fAcdD4', startBlockNumber: 16511305 },
+    ]
+  },
+  {
+    setName: 'ATTRToken',
+    events: [
+      'TransferRuleConfigured(address,(uint16,uint16,uint96,uint40,uint16,uint16))',
+      'Transfer(address,address,uint256)',
+      'Approval(address,address,uint256)',
+    ],
+    contracts: [
+      { chainId: 1, address: '0x160d5f442E7d3899955Cf5adfC15Fce57c05ea78', startBlockNumber: 12914041 },
+      { chainId: 137, address: '0x45cf5df9e67409279f635291c71dc76a370f4f69', startBlockNumber: 17898279 },
+    ]
+  },
 ];
 
-function getEventIDsFromABI(abi: string[]): string[] {
-  const iface = new ethers.utils.Interface(abi)
+/**
+ * Try get with both format: normal + full event abi format
+ */
+function getEventIDs(sources: string[]) : string[] {
+  const ids = []
+
+  for (const s of sources) {
+    if (s.includes('event ')) {
+      ids.push(...getEventIDsFromABI(s))
+    } else {
+      ids.push(ethers.utils.id(s))
+    }
+  }
+
+  return ids
+}
+
+function getEventIDsFromABI(abi: string): string[] {
+  const iface = new ethers.utils.Interface([abi])
     
   const eventIDs :string[] = []
   for (const evName in iface.events) {
