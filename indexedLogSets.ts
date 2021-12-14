@@ -150,16 +150,17 @@ const rows: BaseIndexedLogSet[] = [
       { chainId: 137, address: '0x0335DeFC8A1977b99488e0b5f5c6bc3D44fAcdD4', startBlockNumber: 16511305 },
     ]
   },
-  {
-    setName: 'OldBountyPayments',
-    events: [
-      'event BountiesPayed(bytes32 indexed refHash, address[] beneficiaries, uint256[] amounts)',
-    ],
-    contracts: [
-      { chainId: 1, address: '0x160d5f442E7d3899955Cf5adfC15Fce57c05ea78', startBlockNumber: 12914041 },
-      { chainId: 137, address: '0x45cf5df9e67409279f635291c71dc76a370f4f69', startBlockNumber: 17898279 },
-    ]
-  },
+  // Tracking happens in LiquidityFarmingReferralContractV1
+  // {
+  //   setName: 'OldBountyPayments',
+  //   events: [
+  //     'event BountiesPayed(bytes32 indexed refHash, address[] beneficiaries, uint256[] amounts)',
+  //   ],
+  //   contracts: [
+  //     { chainId: 1, address: '0x160d5f442E7d3899955Cf5adfC15Fce57c05ea78', startBlockNumber: 12914041 },
+  //     { chainId: 137, address: '0x45cf5df9e67409279f635291c71dc76a370f4f69', startBlockNumber: 17898279 },
+  //   ]
+  // },
 ];
 
 function getEventIDsFromABI(abi: string[]): string[] {
