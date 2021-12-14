@@ -90,7 +90,7 @@ const rows: BaseIndexedLogSet[] = [
   {
     setName: 'DAPPOpenPeriodClosedListFilter',
     events: [
-      'event ConfigChanged(bytes32 refHash, string key, bytes value)',
+      'event ConfigChanged(bytes32 indexed refHash, string key, bytes value)',
       'event AddressesChanged(bytes32 indexed refHash, uint8 change, address[] addresses)',
     ],
     contracts: [
