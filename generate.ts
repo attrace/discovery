@@ -28,8 +28,8 @@ async function main() {
   await writeFile(`${buildDir}/indexers.json`, toManifest({ indexers }));
   await writeFile(`${buildDir}/tokenRegistries.json`, toManifest({ tokenRegistries }));
   await writeFile(`${buildDir}/airports.json`, toManifest({ airports }));
-  await writeFile(`${buildDir}/full.json`, toManifest({ daos , attrs, indexers, tokenRegistries, airports}));
   await writeFile(`${buildDir}/indexedLogSets.json`, toManifest({ indexedLogSets }));
+  await writeFile(`${buildDir}/full.json`, toManifest({ daos , attrs, indexers, tokenRegistries, airports, indexedLogSets }));
 }
 main()
 .catch(err => {
