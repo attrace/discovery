@@ -57,6 +57,8 @@ const rows: BaseIndexedLogSet[] = [
     events: [
       'event ERC20BountyDeposited(bytes32 indexed refHash, address token, uint256 value, address from)',
       'event NativeBountyDeposited(bytes32 indexed refHash, uint256 value, address from)',
+      'event ClaimRootAdded(bytes32 indexed claimRoot, bytes32 indexed refHash, uint40 cpStart, uint40 cpEnd)',
+      'event BountiesClaimed(bytes32 indexed claimRoot, address indexed holder, bytes32 payoutHash)',
     ],
     contracts: [
       { chainId: 4, address: '0x6a73AB4Cb1031a8f3e907333678c9BDdd7411fd5', startBlockNumber: 9607267 },
