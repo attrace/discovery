@@ -14,6 +14,7 @@ export interface IndexedLogSet extends BaseIndexedLogSet {
 export async function getIndexedLogSets(): Promise<IndexedLogSet[]> {
   return rows.map(d => ({ 
     ...d,
+    contracts: d.contracts.map(d => ({ ...d, address: ethers.utils.getAddress(d.address) })),
     eventIds: getEventIDsFromABI(d.events),
   }));
 }
