@@ -88,6 +88,7 @@ const rows: BaseIndexedLogSet[] = [
     ],
     contracts: [
       { chainId: 80001, address: '0x584D90cA2E2dBC82414639b6667c81839BfEaebe', startBlockNumber: 22452876 },
+      { chainId: 137, address: '0x54f965D9F159E1211cda8Ee6dE3E24b4D72A620b', startBlockNumber: 22637074 },
     ]
   },
   {
