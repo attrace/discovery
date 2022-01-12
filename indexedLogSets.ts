@@ -155,6 +155,20 @@ const rows: BaseIndexedLogSet[] = [
       { chainId: 137, address: '0x0335DeFC8A1977b99488e0b5f5c6bc3D44fAcdD4', startBlockNumber: 16511305 },
     ]
   },
+  {
+    setName: 'StakingRewardsV1',
+    events: [
+      'event RewardSet(uint256 indexed reward)',
+      'event PeriodExtend(uint256 indexed periodEnds)',
+      'event Staked(address indexed user, uint256 amount)',
+      'event Withdrawn(address indexed user, uint256 amount, uint256 penalty)',
+      'event RewardPaid(address indexed user, uint256 reward)',
+      'event Recovered(address indexed token, uint256 amount)'
+    ],
+    contracts: [
+      { chainId: 1, address: '0x4e5c36cc0f10717d6407f39424ab402627b85197', startBlockNumber: 13952340 },
+    ]
+  },
   // Tracking happens in LiquidityFarmingReferralContractV1
   // {
   //   setName: 'OldBountyPayments',
