@@ -169,6 +169,18 @@ const rows: BaseIndexedLogSet[] = [
       { chainId: 1, address: '0x4e5c36cc0f10717d6407f39424ab402627b85197', startBlockNumber: 13952340 },
     ]
   },
+  {
+    setName: 'ReferralFarmsV1',
+    events: [
+      'event FarmExists(address indexed sponsor, bytes24 indexed rewardTokenDefn, bytes24 indexed referredTokenDefn, bytes32 farmHash)',
+      'event FarmDepositChange(bytes32 indexed farmHash, int256 delta)',
+      'event FarmTokenChange(bytes32 indexed farmHash, bytes24 indexed token, uint8 change)',
+      'event FarmMetastate(bytes32 indexed farmHash, bytes32 indexed key, bytes value)',
+    ],
+    contracts: [
+      { chainId: 4, address: '0xb2457878E43c59d813dc0e0267F4B91c4611c332', startBlockNumber: 10034234 },
+    ]
+  },
   // Tracking happens in LiquidityFarmingReferralContractV1
   // {
   //   setName: 'OldBountyPayments',
