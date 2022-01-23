@@ -9,8 +9,8 @@ Last published manifests can be found on https://discovery.attrace.com/mainnet/*
 -  [daos.json](https://discovery.attrace.com/mainnet/daos.json)
 -  [attrs.json](https://discovery.attrace.com/mainnet/attrs.json)
 -  [indexers.json](https://discovery.attrace.com/mainnet/indexers.json)
--  [tokenRegistries.json](https://discovery.attrace.com/mainnet/tokenRegistries.json)
 -  [airports.json](https://discovery.attrace.com/mainnet/airports.json)
+-  [womOracles.json](https://discovery.attrace.com/mainnet/womOracles.json)
 -  [full.json](https://discovery.attrace.com/mainnet/full.json)
 -  [indexedLogSets.json](https://discovery.attrace.com/mainnet/indexedLogSets.json)
 

@@ -1,5 +1,7 @@
 import { EstimatedNodeLocation } from "./types";
 
+// DEPRECATED
+
 // TODO resolve these from the networks when contracts are deployed
 export interface TokenRegistryInfo {
   url: string;
