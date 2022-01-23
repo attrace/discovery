@@ -14,7 +14,7 @@ Last published manifests can be found on https://discovery.attrace.com/mainnet/*
 -  [full.json](https://discovery.attrace.com/mainnet/full.json)
 -  [indexedLogSets.json](https://discovery.attrace.com/mainnet/indexedLogSets.json)
 
-## Indexers/tokenRegistry usage mindset
+## Usage mindset for indexers and Word of Mouth oracles.
 
 These manifests provide node discovery hints without any uptime guarantees.   
 The nodes are "most likely" up, but they might be unreachable due to netsplit/load/maintenance/attacks/...   
