@@ -173,13 +173,13 @@ const rows: BaseIndexedLogSet[] = [
     setName: 'ReferralFarmsV1',
     events: [
       'event FarmExists(address indexed sponsor, bytes24 indexed rewardTokenDefn, bytes24 indexed referredTokenDefn, bytes32 farmHash)',
-      'event FarmDepositChange(bytes32 indexed farmHash, int256 delta)',
+      'event FarmDepositChange(bytes32 indexed farmHash, uint128 delta, bool isNegative)',
       'event FarmTokenChange(bytes32 indexed farmHash, bytes24 indexed token, uint8 change)',
       'event FarmMetastate(bytes32 indexed farmHash, bytes32 indexed key, bytes value)',
-      'event RewardsHarvested(address indexed caller, bytes24 indexed rewardTokenDefn, bytes32 indexed farmHash, uint256 value, bytes32 leafHash)',
+      'event RewardsHarvested(address indexed caller, bytes24 indexed rewardTokenDefn, bytes32 indexed farmHash, uint128 value, bytes32 leafHash)',
     ],
     contracts: [
-      { chainId: 4, address: '0xb2457878E43c59d813dc0e0267F4B91c4611c332', startBlockNumber: 10034234 },
+      { chainId: 4, address: '0x181D7ABC3CC77A0217c5780b84ba5e289fCe6292', startBlockNumber: 10034234 },
     ]
   },
   // Tracking happens in LiquidityFarmingReferralContractV1
