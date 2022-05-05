@@ -179,7 +179,7 @@ const rows: BaseIndexedLogSet[] = [
       'event RewardsHarvested(address indexed caller, bytes24 indexed rewardTokenDefn, bytes32 indexed farmHash, uint128 value, bytes32 leafHash)',
     ],
     contracts: [
-      { chainId: 4, address: '0x181D7ABC3CC77A0217c5780b84ba5e289fCe6292', startBlockNumber: 10034234 },
+      { chainId: 4, address: '0x181D7ABC3CC77A0217c5780b84ba5e289fCe6292', startBlockNumber: 10623169 },
     ]
   },
   // Tracking happens in LiquidityFarmingReferralContractV1
