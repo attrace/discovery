@@ -1,5 +1,5 @@
-import { NetworkContract } from "./types";
 import { ethers } from "ethers";
+import { NetworkContract } from "./types";
 
 interface BaseIndexedLogSet {
   setName: string;
@@ -173,13 +173,14 @@ const rows: BaseIndexedLogSet[] = [
     setName: 'ReferralFarmsV1',
     events: [
       'event FarmExists(address indexed sponsor, bytes24 indexed rewardTokenDefn, bytes24 indexed referredTokenDefn, bytes32 farmHash)',
-      'event FarmDepositChange(bytes32 indexed farmHash, uint128 delta, bool isNegative)',
-      'event FarmTokenChange(bytes32 indexed farmHash, bytes24 indexed token, uint8 change)',
+      'event FarmDepositIncreased(bytes32 indexed farmHash, uint128 delta)',
+      'event FarmDepositDecreaseClaimed(bytes32 indexed farmHash, uint128 delta)',
       'event FarmMetastate(bytes32 indexed farmHash, bytes32 indexed key, bytes value)',
       'event RewardsHarvested(address indexed caller, bytes24 indexed rewardTokenDefn, bytes32 indexed farmHash, uint128 value, bytes32 leafHash)',
+      'event FarmDepositDecreaseRequested(bytes32 indexed farmHash, uint128 value, uint128 confirmation)',
     ],
     contracts: [
-      { chainId: 4, address: '0x181D7ABC3CC77A0217c5780b84ba5e289fCe6292', startBlockNumber: 10623169 },
+      { chainId: 4, address: '0xF657F4F0408AcEE64722483acf53Ae3fd7C85cB7', startBlockNumber: 10663437 },
     ]
   },
   // Tracking happens in LiquidityFarmingReferralContractV1
