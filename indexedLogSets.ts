@@ -180,7 +180,7 @@ const rows: BaseIndexedLogSet[] = [
       'event FarmDepositDecreaseRequested(bytes32 indexed farmHash, uint128 value, uint128 confirmation)',
     ],
     contracts: [
-      { chainId: 4, address: '0xF657F4F0408AcEE64722483acf53Ae3fd7C85cB7', startBlockNumber: 10663437 },
+      { chainId: 4, address: '0x5c057Fd6830fCAecA2BC76A8FBFf9b03D274Ce13', startBlockNumber: 10668936 },
     ]
   },
   // Tracking happens in LiquidityFarmingReferralContractV1
