@@ -6,11 +6,11 @@ export interface WomOracleInfo {
   location: EstimatedNodeLocation; 
 }
 
-export async function getWomOracles(): Promise<WomOracleInfo[]> {
+export function getWomOracles(): WomOracleInfo[] {
   return oracles.map(d => ({ ... d }));
 }
 
 // Actual definitions without checks
 const oracles: WomOracleInfo[] = [
-  { url: 'https://wom-oracle1.attrace.com', location: { lat: 53.3331, lon: -6.2489 } },
+  { url: 'https://oracle-4470-dub.attrace.com', location: { lat: 53.3331, lon: -6.2489 } },
 ];
