@@ -1,14 +1,20 @@
 import { NetworkContract } from "./types";
 import { ethers } from 'ethers';
-import { getWomOracles, WomOracleInfo } from "./womOracles";
+import { EstimatedNodeLocation } from "./types";
 
-export interface FarmOracle {
-  oracles: WomOracleInfo[];
+
+export interface OracleInfo {
+  url: string;
+  location: EstimatedNodeLocation;
+}
+
+export interface FarmOracleInfo {
+  oracles: OracleInfo[];
   referralFarmsV1: NetworkContract[];
   confirmationsV1: NetworkContract[];
 }
 
-export async function getFarmOracles(): Promise<FarmOracle> {
+export async function getFarmOracles(): Promise<FarmOracleInfo> {
   registries.referralFarmsV1 = validDateNetworkContract(registries.referralFarmsV1);
   registries.confirmationsV1 = validDateNetworkContract(registries.confirmationsV1);
   return registries;
@@ -24,9 +30,11 @@ export function validDateNetworkContract(contract: NetworkContract[]) {
 }
 
 // Actual definitions without checks
-const registries: FarmOracle =
+const registries: FarmOracleInfo =
 {
-  oracles: getWomOracles(),
+  oracles: [
+    { url: 'https://oracle-4470-dub.attrace.com', location: { lat: 53.3331, lon: -6.2489 } },
+  ],
   referralFarmsV1: [
     { chainId: 1, address: '0x77663b56A702eAde53DEd60EacF84Eb033A5Efb0' },
     { chainId: 4, address: '0x77663b56A702eAde53DEd60EacF84Eb033A5Efb0' },
@@ -36,5 +44,5 @@ const registries: FarmOracle =
     { chainId: 4, address: '0xe562a0193464Db24acd9E3465313346224Cf29Ea' },
   ]
 }
-  
+
 
