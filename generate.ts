@@ -7,6 +7,7 @@ import { getATTRs } from './attrs';
 import { NetworkContract } from './types';
 import { getIndexedLogSets } from './indexedLogSets';
 import { getWomOracles } from './womOracles';
+import { getFarmOracles } from './farmOracles';
 
 function toManifest(props: object): string {
   return JSON.stringify({ ...props, generatedAt: Date.now() });
@@ -19,6 +20,7 @@ async function main() {
   const airports = await getAirports();
   const womOracles = await getWomOracles();
   const indexedLogSets = await getIndexedLogSets();
+  const farmOracles = await getFarmOracles();
 
   // DEPRECATED
   const tokenRegistries = await getTokenRegistries();
@@ -33,6 +35,7 @@ async function main() {
   await writeFile(`${buildDir}/airports.json`, toManifest({ airports }));
   await writeFile(`${buildDir}/indexedLogSets.json`, toManifest({ indexedLogSets }));
   await writeFile(`${buildDir}/womOracles.json`, toManifest({ womOracles }));
+  await writeFile(`${buildDir}/farmOracles.json`, toManifest({ farmOracles }));
   await writeFile(`${buildDir}/tokenRegistries.json`, toManifest({ tokenRegistries })); // Deprecated
   await writeFile(`${buildDir}/full.json`, toManifest({ daos, attrs, indexers, womOracles, airports, indexedLogSets, tokenRegistries }));
 }
