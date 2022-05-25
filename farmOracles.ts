@@ -4,6 +4,7 @@ import { EstimatedNodeLocation } from "./types";
 
 
 export interface OracleInfo {
+  chainId: number;
   url: string;
   location: EstimatedNodeLocation;
 }
@@ -33,7 +34,22 @@ export function validDateNetworkContract(contract: NetworkContract[]) {
 const registries: FarmOracleInfo =
 {
   oracles: [
-    { url: 'https://oracle-4470-dub.attrace.com', location: { lat: 53.3331, lon: -6.2489 } },
+    {
+      chainId: 1,
+      url: 'https://oracle-147-dub.attrace.com/',
+      location: {
+        lat: 53.3331,
+        lon: -6.2489
+      }
+    },
+    {
+      chainId: 4,
+      url: 'https://oracle-4470-dub.attrace.com',
+      location: {
+        lat: 50.1109,
+        lon: 8.6821
+      }
+    },
   ],
   referralFarmsV1: [
     { chainId: 1, address: '0x77663b56A702eAde53DEd60EacF84Eb033A5Efb0' },
