@@ -52,11 +52,11 @@ const registries: FarmOracleInfo =
     },
   ],
   referralFarmsV1: [
-    { chainId: 1, address: '0x77663b56A702eAde53DEd60EacF84Eb033A5Efb0' },
+    // { chainId: 1, address: '0x77663b56A702eAde53DEd60EacF84Eb033A5Efb0' },
     { chainId: 4, address: '0x77663b56A702eAde53DEd60EacF84Eb033A5Efb0' },
   ],
   confirmationsV1: [
-    { chainId: 1, address: '0xe562a0193464Db24acd9E3465313346224Cf29Ea' },
+    // { chainId: 1, address: '0xe562a0193464Db24acd9E3465313346224Cf29Ea' },
     { chainId: 4, address: '0xe562a0193464Db24acd9E3465313346224Cf29Ea' },
   ]
 }
