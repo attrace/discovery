@@ -53,11 +53,11 @@ const registries: FarmOracleInfo =
   ],
   referralFarmsV1: [
     // { chainId: 1, address: '0x77663b56A702eAde53DEd60EacF84Eb033A5Efb0' },
-    { chainId: 4, address: '0x77663b56A702eAde53DEd60EacF84Eb033A5Efb0' },
+    { chainId: 4, address: '0xcC0a58f069e3F61f3440Bc85c6C8D88914e589d4' },
   ],
   confirmationsV1: [
     // { chainId: 1, address: '0xe562a0193464Db24acd9E3465313346224Cf29Ea' },
-    { chainId: 4, address: '0xe562a0193464Db24acd9E3465313346224Cf29Ea' },
+    { chainId: 4, address: '0x791672E29626a4D9c30317Da14f415D82a1197AC' },
   ]
 }
 
