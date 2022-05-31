@@ -38,7 +38,7 @@ const registries: FarmOracleInfo = {
   oracles: [
     {
       chainId: 147,
-      url: "https://oracle-147-dub.attrace.com/",
+      url: "https://oracle-147-dub.attrace.com",
       location: {
         lat: 53.3331,
         lon: -6.2489,
