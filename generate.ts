@@ -1,13 +1,13 @@
 import { writeFile, rm, mkdirp } from 'fs-extra';
-import { AirportInfo, getAirports } from './airports';
-import { TokenRegistryInfo, getTokenRegistries } from './tokens';
+import { getAirports } from './airports';
+import { getTokenRegistries } from './tokenRegistries';
 import { getDAOs } from './daos';
 import { getIndexers, IndexerInfo } from './indexers';
 import { getATTRs } from './attrs';
-import { NetworkContract } from './types';
 import { getIndexedLogSets } from './indexedLogSets';
 import { getWomOracles } from './womOracles';
 import { getFarmOracles } from './farmOracles';
+import { getTokens } from './tokens';
 
 function toManifest(props: object): string {
   return JSON.stringify({ ...props, generatedAt: Date.now() });
@@ -21,6 +21,7 @@ async function main() {
   const womOracles = await getWomOracles();
   const indexedLogSets = await getIndexedLogSets();
   const farmOracles = await getFarmOracles();
+  const tokens = await getTokens();
 
   // DEPRECATED
   const tokenRegistries = await getTokenRegistries();
@@ -36,6 +37,7 @@ async function main() {
   await writeFile(`${buildDir}/indexedLogSets.json`, toManifest({ indexedLogSets }));
   await writeFile(`${buildDir}/womOracles.json`, toManifest({ womOracles }));
   await writeFile(`${buildDir}/farmOracles.json`, toManifest({ farmOracles }));
+  await writeFile(`${buildDir}/tokens.json`, toManifest({ tokens }));
   await writeFile(`${buildDir}/tokenRegistries.json`, toManifest({ tokenRegistries })); // Deprecated
   await writeFile(`${buildDir}/full.json`, toManifest({ daos, attrs, indexers, womOracles, airports, indexedLogSets, tokenRegistries }));
 }
