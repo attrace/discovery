@@ -22,11 +22,11 @@ export async function getTokens(): Promise<TokenInfo[]> {
 const tokens: TokenInfo[] = [
   {
     "chainId": 1,
-    "address": "0x085209C2f2B5575553Def689E1bF46Ba582C3B79",
+    "address": "0x6e9e3bFbd01904A5513BB2bFD0500127B3fba00B",
     "symbol": "ATTR (12m vest)",
     "decimals": 18,
     "name": "Attrace (12 months vested)",
-    "logoURI": "https://static.debank.com/image/eth_token/logo_url/0x44e2dec86b9f0e0266e9aa66e10323a2bd69cf9a/146d727c983ae469069e99c3b2d4a85c.png"
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/attrace_logo_v2_256_12m.png"
   },
 ];
 
