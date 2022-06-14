@@ -181,7 +181,7 @@ const rows: BaseIndexedLogSet[] = [
     ],
     contracts: [
       { chainId: 1, address: '0x8c023280ebcec221c394b7e6a1c245d159f8b376', startBlockNumber: 14873570 },
-      { chainId: 4, address: '0xcC0a58f069e3F61f3440Bc85c6C8D88914e589d4', startBlockNumber: 10766360 },
+      { chainId: 4, address: '0x001EF9Fc14fAbB04cB5D2406791f6C830d63AE13', startBlockNumber: 10844931 },
     ]
   },
   // Tracking happens in LiquidityFarmingReferralContractV1
