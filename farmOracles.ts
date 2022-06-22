@@ -53,7 +53,7 @@ const registries: FarmOracleInfo = {
     },
   ],
   referralFarmsV1: [
-    { chainId: 1, address: '0x8c023280ebcec221c394b7e6a1c245d159f8b376' },
+    { chainId: 1, address: '0xC1F04af99fc53DD3b74615AB47D8825EB98B7943' },
     { chainId: 4, address: "0x0c050289cBD8E3c9dcd084c5769732C2cEdbB9e9" },
   ],
   confirmationsV1: [
