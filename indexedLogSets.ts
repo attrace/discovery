@@ -195,6 +195,17 @@ const rows: BaseIndexedLogSet[] = [
   //     { chainId: 137, address: '0x45cf5df9e67409279f635291c71dc76a370f4f69', startBlockNumber: 17898279 },
   //   ]
   // },
+  {
+    setName: 'ConfirmationV1',
+    events: [
+      'event ConfirmationFinalized (bytes32 indexed confirmationHash, uint128 indexed number, bytes32 stateRoot, bytes32 parentHash, uint64 timestamp, bytes32 bundleHash, bytes32 indexed closerHash, uint32 blockCount, bytes32 blockHash, uint64 confirmChainBlockNr)',
+      'event ConfigChanged(address indexed oracleGate, uint32 finalizeBlockDiffMin)',
+    ],
+    contracts: [
+      { chainId: 1, address: '0x3BdE25d3Ca9b0B08f183D52448aFCF8E3E772BEe', startBlockNumber: 14873531 },
+      { chainId: 4, address: '0xb3B6E8e115F2E755b4452AE2d58f8216344eFC1a', startBlockNumber: 10897245 },
+    ]
+  },
 ];
 
 function getEventIDsFromABI(abi: string[]): string[] {
