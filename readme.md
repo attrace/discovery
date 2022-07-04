@@ -14,6 +14,7 @@ Last published manifests can be found on https://discovery.attrace.com/mainnet/*
 -  [full.json](https://discovery.attrace.com/mainnet/full.json)
 -  [indexedLogSets.json](https://discovery.attrace.com/mainnet/indexedLogSets.json)
 -  [farmOracles.json](https://discovery.attrace.com/mainnet/farmOracles.json)
+-  [tokens.json](https://discovery.attrace.com/mainnet/tokens.json)
 
 ## Usage mindset for indexers and Word of Mouth oracles.
 
