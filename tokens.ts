@@ -28,5 +28,13 @@ const tokens: TokenInfo[] = [
     "name": "Attrace (12 months vested)",
     "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/attrace_logo_v2_256_12m.png"
   },
+  {
+    "chainId": 1,
+    "address": "0xD502F487e1841Fdc805130e13eae80c61186Bc98",
+    "symbol": "ITGR",
+    "decimals": 18,
+    "name": "Integral",
+    "logoURI": "https://assets.website-files.com/6233333c48c5fd468770f97e/6239d4de389d9d22bd9fb8a0_icon.png",
+  },
 ];
 
