@@ -18,4 +18,3 @@ const rows: NetworkContract[] = [
   { chainId: 80001, address: '0xd148c38e3eB133CF32E2B65528540D9684De254d' },
   { chainId: 56, address: '0x0f07ffd690dffd9a0ce8274116830cf62d086b5f' },
 ];
-
