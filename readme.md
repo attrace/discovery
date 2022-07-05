@@ -6,23 +6,22 @@ Discovery and routing artifacts.
 
 Last published manifests can be found on https://discovery.attrace.com/mainnet/*
 
--  [daos.json](https://discovery.attrace.com/mainnet/daos.json)
--  [attrs.json](https://discovery.attrace.com/mainnet/attrs.json)
--  [indexers.json](https://discovery.attrace.com/mainnet/indexers.json)
--  [airports.json](https://discovery.attrace.com/mainnet/airports.json)
--  [womOracles.json](https://discovery.attrace.com/mainnet/womOracles.json)
--  [full.json](https://discovery.attrace.com/mainnet/full.json)
--  [indexedLogSets.json](https://discovery.attrace.com/mainnet/indexedLogSets.json)
 -  [farmOracles.json](https://discovery.attrace.com/mainnet/farmOracles.json)
 -  [tokens.json](https://discovery.attrace.com/mainnet/tokens.json)
+-  [indexers.json](https://discovery.attrace.com/mainnet/indexers.json)
+-  [indexedLogSets.json](https://discovery.attrace.com/mainnet/indexedLogSets.json)
+-  [airports.json](https://discovery.attrace.com/mainnet/airports.json)
 
-## Usage mindset for indexers and Word of Mouth oracles.
+Special full file which contains everything in 1 file (to limit to 1 request if multiple are needed):
+-  [full.json](https://discovery.attrace.com/mainnet/full.json)
+
+## Usage mindset for indexers and oracles.
 
 These manifests provide node discovery hints without any uptime guarantees.   
 The nodes are "most likely" up, but they might be unreachable due to netsplit/load/maintenance/attacks/...   
 It's up to caller to fallback to other nodes when nodes are unreachable.
 
-When nodes are really shut down, they are removed from the manifests.
+Only when nodes are really shut down and decommissioned, they are removed from the manifests.
 
 ## Fast node selection
 The CDN discovery.attrace.com provides `x-amz-cf-pop` response header for fast node selection.   
