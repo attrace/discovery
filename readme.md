@@ -6,6 +6,7 @@ Discovery and routing artifacts.
 
 Last published manifests can be found on https://discovery.attrace.com/mainnet/*
 
+-  [attrs.json](https://discovery.attrace.com/mainnet/attrs.json)
 -  [farmOracles.json](https://discovery.attrace.com/mainnet/farmOracles.json)
 -  [tokens.json](https://discovery.attrace.com/mainnet/tokens.json)
 -  [indexers.json](https://discovery.attrace.com/mainnet/indexers.json)
