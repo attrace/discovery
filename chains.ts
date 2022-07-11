@@ -54,6 +54,10 @@ interface ChainConfiguration {
   // Eg: { chainId: '1', contract: '0x518173169DaB8483bc42c943969357A1F5BF091C', startBlockNr: 12345575 }
   authority: ChainContract;
 
+  // Pacemaker blockchain chainid as big number string.
+  // Eg: '1'
+  pacemaker: string;
+
   // Set of confirmation contracts these oracles support (loaded from the authority)
   confirmationsV1: ChainContract[];
   
@@ -170,6 +174,7 @@ const logset_ConfirmationV1: LogSet = {
 const mainnet: ChainInfo = {
   chainId: 147,
   authority: { chainId: '1', address: '0x518173169DaB8483bc42c943969357A1F5BF091C' },
+  pacemaker: '1',
   confirmationsV1: [
     { chainId: '1', address: '0x3bde25d3ca9b0b08f183d52448afcf8e3e772bee' }
   ],
@@ -222,6 +227,7 @@ const mainnet: ChainInfo = {
 const testnet0: ChainInfo = {
   chainId: 4470,
   authority: { chainId: '4', address: '0xe4517CE62Ee3f09Eee68940e3e2BcE27C525df4B' },
+  pacemaker: '4',
   confirmationsV1: [
     { chainId: '4', address: '0xb3B6E8e115F2E755b4452AE2d58f8216344eFC1a' },
   ],
