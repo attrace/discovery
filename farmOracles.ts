@@ -1,12 +1,14 @@
 import { ethers } from "ethers";
 import { EstimatedNodeLocation, NetworkContract } from "./types";
 
+// DEPRECATED, use the one in oracles.ts instead for imports
 export interface OracleInfo {
   chainId: number;
   url: string;
   location: EstimatedNodeLocation;
 }
 
+// DEPRECATED
 export interface FarmOracleInfo {
   oracles: OracleInfo[];
   referralFarmsV1: NetworkContract[];
