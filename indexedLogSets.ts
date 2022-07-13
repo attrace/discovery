@@ -73,6 +73,24 @@ const rows: BaseIndexedLogSet[] = [
       { chainId: 4, address: '0xb3B6E8e115F2E755b4452AE2d58f8216344eFC1a', startBlockNumber: 10897245 },
     ]
   },
+  {
+    setName: 'UniswapV2Factory',
+    events: [
+      'event PairCreated(address indexed token0, address indexed token1, address pair, uint)',
+    ],
+    contracts: [
+      { chainId: 1, address: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f', startBlockNumber: 10000835 },
+    ]
+  },
+  {
+    setName: 'UniswapV3Factory',
+    events: [
+      'event PoolCreated( address indexed token0, address indexed token1, uint24 indexed fee, int24 tickSpacing, address pool)',
+    ],
+    contracts: [
+      { chainId: 1, address: '0x1F98431c8aD98523631AE4a59f267346ea31F984', startBlockNumber: 12369621 },
+    ]
+  },
 ];
 
 function getEventIDsFromABI(abi: string[]): string[] {
