@@ -30,7 +30,7 @@ const rows: BaseIndexedLogSet[] = [
     ],
     contracts: [
       { chainId: 1, address: '0x44e2deC86B9F0e0266E9AA66e10323A2bd69CF9A', startBlockNumber: 12434965 },
-      { chainId: 137, address: '0x0335DeFC8A1977b99488e0b5f5c6bc3D44fAcdD4', startBlockNumber: 16511305 },
+      // { chainId: 137, address: '0x0335DeFC8A1977b99488e0b5f5c6bc3D44fAcdD4', startBlockNumber: 16511305 },
     ]
   },
   {
@@ -71,6 +71,24 @@ const rows: BaseIndexedLogSet[] = [
     contracts: [
       { chainId: 1, address: '0x3BdE25d3Ca9b0B08f183D52448aFCF8E3E772BEe', startBlockNumber: 14873531 },
       { chainId: 4, address: '0xb3B6E8e115F2E755b4452AE2d58f8216344eFC1a', startBlockNumber: 10897245 },
+    ]
+  },
+  {
+    setName: 'UniswapV2Factory',
+    events: [
+      'event PairCreated(address indexed token0, address indexed token1, address pair, uint)',
+    ],
+    contracts: [
+      { chainId: 1, address: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f', startBlockNumber: 10000835 },
+    ]
+  },
+  {
+    setName: 'UniswapV3Factory',
+    events: [
+      'event PoolCreated( address indexed token0, address indexed token1, uint24 indexed fee, int24 tickSpacing, address pool)',
+    ],
+    contracts: [
+      { chainId: 1, address: '0x1F98431c8aD98523631AE4a59f267346ea31F984', startBlockNumber: 12369621 },
     ]
   },
 ];
