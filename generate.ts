@@ -7,6 +7,7 @@ import { getTokens } from './tokens';
 import { getATTRs } from './attrs';
 import { getChains } from './chains';
 import path from 'path';
+import { getTokenLists } from './tokenLists';
 
 function toManifest(props: object): string {
   return JSON.stringify({ ...props, generatedAt: Date.now() });
@@ -20,6 +21,7 @@ async function main() {
   const indexedLogSets = await getIndexedLogSets();
   const airports = await getAirports();
   const chains = await getChains();
+  const tokenLists = await getTokenLists();
 
   // Build
   const buildDir = `${__dirname}/build`;
@@ -33,9 +35,9 @@ async function main() {
   await mkdirp(chainsPath);
   for(let [chainId, chainInfo] of Object.entries(chains)) {
     await writeFile(`${chainsPath}/${chainId}.json`, toManifest({ chainInfo }));
-  
   }
   await writeFile(`${buildDir}/tokens.json`, toManifest({ tokens }));
+  await writeFile(`${buildDir}/tokenLists.json`, toManifest({ tokenLists }));
   await writeFile(`${buildDir}/airports.json`, toManifest({ airports }));
   
   // DEPRECATED
@@ -47,6 +49,7 @@ async function main() {
     attrs,
     chains,
     tokens,
+    tokenLists,
     airports, 
 
     // BELOW DEPRECATED
