@@ -22,10 +22,10 @@ export async function getTokenLists() : Promise<Record<ChainId, TokenListItem[]>
       }, 
       { 
         origin: "Attrace",
-        url: "https://discovery.attrace.com/mainnet/tokens.json" 
+        url: "https://discovery.attrace.com/tokens.json" 
       },
     ],
-    
+
     "4": [
       {
         origin: "Mask", 

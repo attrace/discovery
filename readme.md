@@ -8,17 +8,24 @@
 
 ## Usable artifacts
 
-Last published manifests can be found on https://discovery.attrace.com/mainnet/*
+Last published manifests can be found on https://discovery.attrace.com/*
 
--  [attrs.json](https://discovery.attrace.com/mainnet/attrs.json)
--  [farmOracles.json](https://discovery.attrace.com/mainnet/farmOracles.json)
--  [tokens.json](https://discovery.attrace.com/mainnet/tokens.json)
--  [indexers.json](https://discovery.attrace.com/mainnet/indexers.json)
--  [indexedLogSets.json](https://discovery.attrace.com/mainnet/indexedLogSets.json)
--  [airports.json](https://discovery.attrace.com/mainnet/airports.json)
+-  [attrs.json](https://discovery.attrace.com/attrs.json)
+-  [tokens.json](https://discovery.attrace.com/tokens.json)
+-  [chains.json](https://discovery.attrace.com/chains.json)
+-  [tokenLists.json](https://discovery.attrace.com/tokenLists.json)
+-  [airports.json](https://discovery.attrace.com/airports.json)
 
 Special full file which contains everything in 1 file (to limit to 1 request if multiple are needed):
--  [full.json](https://discovery.attrace.com/mainnet/full.json)
+-  [full.json](https://discovery.attrace.com/full.json)
+
+### Deprecated
+
+The `mainnet/` prefix is still served but is deprecated.
+
+-  [farmOracles.json](https://discovery.attrace.com/farmOracles.json)
+-  [indexers.json](https://discovery.attrace.com/indexers.json)
+-  [indexedLogSets.json](https://discovery.attrace.com/indexedLogSets.json)
 
 ## Usage mindset for indexers and oracles.
 
