@@ -93,7 +93,7 @@ const rows: BaseIndexedLogSet[] = [
   },
 ];
 
-function getEventIDsFromABI(abi: string[]): string[] {
+export function getEventIDsFromABI(abi: string[]): string[] {
   const iface = new ethers.utils.Interface(abi)
     
   const eventIDs :string[] = []
