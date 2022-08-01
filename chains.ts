@@ -267,7 +267,7 @@ const rinkeby0: ChainInfo = {
 
 const goerli0: ChainInfo = {
   chainId: 5470,
-  authority: { chainId: '5', address: '0x2b1116ca5974635a40B820B974Dcb3Ab9D181681' },
+  authority: { chainId: '5', address: '0xDf1662F07678f070b09464C9C227d46789090fc8' },
   pacemaker: '5',
   confirmationsV1: [
     { chainId: '5', address: '0xEE6dF5Bdc3C472401B6DA7ededE1D034a9848ab7' },
