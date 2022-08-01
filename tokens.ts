@@ -9,7 +9,7 @@ export interface TokenInfo {
   logoURI: string;
 }
 
-export async function getTokens(): Promise<TokenInfo[]> {
+export function formatTokens(tokens: TokenInfo[]) : TokenInfo[] {
   return tokens.map(d => {
     return {
       ...d,
@@ -18,8 +18,12 @@ export async function getTokens(): Promise<TokenInfo[]> {
   })
 }
 
+export function getTokens(): TokenInfo[] {
+  return formatTokens(mainnet);
+}
+
 // Actual definitions without checks
-const tokens: TokenInfo[] = [
+const mainnet: TokenInfo[] = [
   {
     "chainId": 1,
     "address": "0x6e9e3bFbd01904A5513BB2bFD0500127B3fba00B",

@@ -32,5 +32,12 @@ export async function getTokenLists() : Promise<Record<ChainId, TokenListItem[]>
         url: "https://tokens.r2d2.to/latest/4/tokens.json"
       }
     ],
+
+    "5": [
+      {
+        origin: "Attrace", 
+        url: "https://discovery.attrace.com/tokens/5.json"
+      }
+    ],
   }
 }

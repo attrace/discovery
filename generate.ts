@@ -8,6 +8,7 @@ import { getATTRs } from './attrs';
 import { getChains } from './chains';
 import path from 'path';
 import { getTokenLists } from './tokenLists';
+import { getTokensByChain } from './tokensByChain';
 
 function toManifest(props: object): string {
   return JSON.stringify({ ...props, generatedAt: Date.now() });
@@ -22,6 +23,7 @@ async function main() {
   const airports = await getAirports();
   const chains = await getChains();
   const tokenLists = await getTokenLists();
+  const tokensByChain = getTokensByChain();
 
   // Build
   const buildDir = `${__dirname}/build`;
@@ -38,6 +40,11 @@ async function main() {
   }
   await writeFile(`${buildDir}/tokens.json`, toManifest({ tokens }));
   await writeFile(`${buildDir}/tokenLists.json`, toManifest({ tokenLists }));
+  const tokensPath = path.join(buildDir, 'tokens');
+  await mkdirp(tokensPath);
+  for(let [chainId, tokens] of Object.entries(tokensByChain)) {
+    await writeFile(`${tokensPath}/${chainId}.json`, toManifest({ tokens }));
+  }
   await writeFile(`${buildDir}/airports.json`, toManifest({ airports }));
   
   // DEPRECATED
