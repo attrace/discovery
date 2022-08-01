@@ -81,7 +81,7 @@ interface ChainInfo extends ChainConfiguration {
 type ChainsInfo = Record<ChainId, ChainInfo>;
 
 export async function getChains() : Promise<ChainsInfo> {
-  const chains: ChainInfo[] = [mainnet, testnet0];
+  const chains: ChainInfo[] = [mainnet, goerli0, rinkeby0];
 
   // Validations
   for(let c of chains) {
@@ -224,7 +224,7 @@ const mainnet: ChainInfo = {
   ]
 }
 
-const testnet0: ChainInfo = {
+const rinkeby0: ChainInfo = {
   chainId: 4470,
   authority: { chainId: '4', address: '0xe4517CE62Ee3f09Eee68940e3e2BcE27C525df4B' },
   pacemaker: '4',
@@ -257,6 +257,47 @@ const testnet0: ChainInfo = {
     {
       chainId: 4470,
       url: 'https://oracle-4470-dub.attrace.com',
+      location: {
+        lat: 50.1109,
+        lon: 8.6821,
+      },
+    }
+  ]
+}
+
+const goerli0: ChainInfo = {
+  chainId: 5470,
+  authority: { chainId: '5', address: '0x2b1116ca5974635a40B820B974Dcb3Ab9D181681' },
+  pacemaker: '5',
+  confirmationsV1: [
+    { chainId: '5', address: '0xEE6dF5Bdc3C472401B6DA7ededE1D034a9848ab7' },
+  ],
+  referralFarmsV1: [
+    { chainId: '5', address: '0x1e1885389b229b036460e2191fbdf0290Bd2baE9'},
+  ],
+  swapReferralsV1: [
+    // TODO on release
+  ],
+  indexedLogSets: [
+    ...generateIndexedLogSets([
+      { 
+        ...logset_ReferralFarmsV1, 
+        contracts: [
+          { chainId: '5', address: '0x1e1885389b229b036460e2191fbdf0290Bd2baE9', startBlockNumber: 7327781 }
+        ]
+      },
+      {
+        ...logset_ConfirmationV1,
+        contracts: [
+          { chainId: '5', address: '0xEE6dF5Bdc3C472401B6DA7ededE1D034a9848ab7', startBlockNumber: 7327774 },
+        ]
+      }
+    ]),
+  ],
+  oracles: [
+    {
+      chainId: 5470,
+      url: 'https://oracle-5470-dub.attrace.com',
       location: {
         lat: 50.1109,
         lon: 8.6821,

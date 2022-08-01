@@ -50,7 +50,17 @@ yarn build
 ```
 yarn build
 
+# Upload to mainnet folder
 open "https://s3.console.aws.amazon.com/s3/upload/discovery.attrace.com?region=eu-central-1&prefix=mainnet/"
+# click "Add files"
+# select manifest/* files
+# click permissions
+# click "Grant public-read access"
+# mark "I understand ..."
+# click upload
+
+# Upload to root
+open "https://s3.console.aws.amazon.com/s3/upload/discovery.attrace.com?region=eu-central-1"
 # click "Add files"
 # select manifest/* files
 # click permissions
