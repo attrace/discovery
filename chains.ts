@@ -81,7 +81,7 @@ interface ChainInfo extends ChainConfiguration {
 type ChainsInfo = Record<ChainId, ChainInfo>;
 
 export async function getChains() : Promise<ChainsInfo> {
-  const chains: ChainInfo[] = [mainnet, goerli0, rinkeby0];
+  const chains: ChainInfo[] = [mainnet, goerli0];
 
   // Validations
   for(let c of chains) {
