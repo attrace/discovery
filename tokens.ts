@@ -48,5 +48,13 @@ const mainnet: TokenInfo[] = [
     "name": "Amasa",
     "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/amasa_logo_128.png",
   },
+  {
+    "chainId": 1,
+    "address": "0xc98d64da73a6616c42117b582e832812e7b8d57f",
+    "symbol": "RSS3",
+    "decimals": 18,
+    "name": "RSS3",
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/rss3_logo_128.png",
+  },
 ];
 
