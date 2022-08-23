@@ -56,5 +56,13 @@ const mainnet: TokenInfo[] = [
     "name": "RSS3",
     "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/rss3_logo_128.png",
   },
+  {
+    "chainId": 1,
+    "address": "0xf293d23BF2CDc05411Ca0edDD588eb1977e8dcd4",
+    "symbol": "SYLO",
+    "decimals": 18,
+    "name": "Sylo",
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/sylo_logo_128.png"
+  }
 ];
 
