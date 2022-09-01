@@ -66,14 +66,6 @@ const mainnet: TokenInfo[] = [
   },
   {
     "chainId": 1,
-    "address": "0xf293d23BF2CDc05411Ca0edDD588eb1977e8dcd4",
-    "symbol": "SYLO",
-    "decimals": 18,
-    "name": "Sylo",
-    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/sylo_logo_128.png"
-  },
-  {
-    "chainId": 1,
     "address": "0x949D48EcA67b17269629c7194F4b727d4Ef9E5d6",
     "symbol": "MC",
     "decimals": 18,
