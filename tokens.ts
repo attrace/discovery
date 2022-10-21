@@ -71,6 +71,22 @@ const mainnet: TokenInfo[] = [
     "decimals": 18,
     "name": "Merit Circle",
     "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/mc_logo_128.png"
+  },
+  {
+    "chainId": 1,
+    "address": "0xf4d2888d29D722226FafA5d9B24F9164c092421E",
+    "symbol": "LOOKS",
+    "decimals": 18,
+    "name": "LooksRare",
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/looks_logo_128.png"
+  },
+  {
+    "chainId": 1,
+    "address": "0x967da4048cD07aB37855c090aAF366e4ce1b9F48",
+    "symbol": "OCEAN",
+    "decimals": 18,
+    "name": "Ocean Token",
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/ocean_logo_128.png"
   }
 ];
 
