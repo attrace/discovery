@@ -87,6 +87,14 @@ const mainnet: TokenInfo[] = [
     "decimals": 18,
     "name": "Ocean Token",
     "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/ocean_logo_128.png"
+  },
+  {
+    "chainId": 1,
+    "address": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
+    "symbol": "SUSHI",
+    "decimals": 18,
+    "name": "SushiToken",
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/sushi_logo_128.png"
   }
 ];
 
