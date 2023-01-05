@@ -36,5 +36,13 @@ const goerli0: TokenInfo[] = [
     "name": "TestToken2",
     "logoURI": "https://goerli.etherscan.io/images/main/empty-token.png",
   },
+  {
+    "chainId": 5,
+    "address": "0x70D2Ecf459724F6Eb580961519BA3CF80bBf27E0",
+    "symbol": "MXV4",
+    "decimals": 18,
+    "name": "MXV4",
+    "logoURI": "https://goerli.etherscan.io/images/main/empty-token.png",
+  },
 ];
 

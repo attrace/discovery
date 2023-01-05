@@ -95,6 +95,14 @@ const mainnet: TokenInfo[] = [
     "decimals": 18,
     "name": "SushiToken",
     "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/sushi_logo_128.png"
+  },
+  {
+    "chainId": 1,
+    "address": "0x2c022e58c5e3ee213f06f975fd8a0d3a6fe9ca1c",
+    "symbol": "FINU",
+    "decimals": 18,
+    "name": "Formula Inu",
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/finu_logo_128.png"
   }
 ];
 
