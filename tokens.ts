@@ -103,6 +103,22 @@ const mainnet: TokenInfo[] = [
     "decimals": 18,
     "name": "Formula Inu",
     "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/finu_logo_128.png"
+  },
+  {
+    "chainId": 1,
+    "address": "0x0C22604A72485143A41E6026CDa757389335A09b",
+    "symbol": "STF",
+    "decimals": 9,
+    "name": "Seventhythree Trade Fund",
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/seventhythree_logo_128.png"
+  },
+  {
+    "chainId": 1,
+    "address": "0x44e2deC86B9F0e0266E9AA66e10323A2bd69CF9A",
+    "symbol": "ATTR",
+    "decimals": 18,
+    "name": "Attrace",
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/attr_logo_128.png"
   }
 ];
 
