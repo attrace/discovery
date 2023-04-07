@@ -119,6 +119,14 @@ const mainnet: TokenInfo[] = [
     "decimals": 18,
     "name": "Attrace",
     "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/attr_logo_128.png"
+  },
+  {
+    "chainId": 1,
+    "address": "0x765af00f9278Ab696E815ffA2d0529CdeBD4E10A",
+    "symbol": "BSKR",
+    "decimals": 18,
+    "name": "BSKR - pulselorian.com",
+    "logoURI": "https://raw.githubusercontent.com/attrace/assets/main/images/tokenLogos/bskr_logo_128.png"
   }
 ];
 
